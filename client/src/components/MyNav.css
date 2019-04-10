@@ -1,0 +1,60 @@
+
+:root {
+	--border-style: 1px solid black;
+	--border-faded-style: 1px solid rgb(139, 139, 139);
+}
+
+.m_nav {
+	list-style: none;
+	width: 100%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 900;
+	padding: 0px;
+	margin-top: 1em;
+	margin-bottom: 3em;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.m_nav_elem:first-of-type {
+	flex-basis: 25%;
+	flex-grow: 0;
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
+	border-left: var(--border-style);
+	border-top: var(--border-style);
+	border-bottom: var(--border-style);
+}
+
+.m_nav_elem {
+	flex-basis: 25%;
+	flex-grow: 0;
+	padding: 0.8em;
+	background-color: aliceblue;
+	border-left: var(--border-faded-style);
+	border-top: var(--border-style);
+	border-bottom: var(--border-style);
+	box-shadow: 5px 4px rgba(73, 73, 73, 0.35);
+}
+
+.m_nav_elem:last-of-type {
+	flex-basis: 25%;
+	flex-grow: 0;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	border-left: var(--border-faded-style);
+	border-top: var(--border-style);
+	border-bottom: var(--border-style);
+	border-right: var(--border-style);
+}
+
+
+.m_nav_elem:hover {
+	background-color: rgb(23, 70, 199);
+	color: aliceblue;
+	cursor: pointer;
+}
