@@ -61,6 +61,7 @@ The following are example emails being sent by Physher.
 ![Interac e-transfer email](./images/interac_email.png)
 
 As you can see in the next image, the University of Windsor displays this email as though it were encrypted with standard TLS encryption when in reality it is not.  The image on the left is using UoW's SMTP server and the image on the right is Gmail's.
+**Note: The second image is from an email sent to a uwindsor email that has my gmail account bcc'ed**
 
 ![Interac e-transfer email 2](./images/interac_email2.png)
 
