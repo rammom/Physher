@@ -58,6 +58,7 @@ export class AuthPage extends Component {
 		e.preventDefault();
 		axios.post('/auth/register', this.state.register)
 			.then(res => {
+				console.log(res);
 				let register = this.state.register;
 				register.error = "";
 				this.setState({ register });
@@ -65,6 +66,7 @@ export class AuthPage extends Component {
 				this.forceUpdate();
 			})
 			.catch(err => {
+				console.log(err);
 				let register = this.state.register;
 				register.error = "Username taken or passwords don't match";
 				this.setState({ register });
