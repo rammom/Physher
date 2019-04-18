@@ -51,7 +51,7 @@ export class AttackPage extends Component {
 		let title = `${from}_${date.getTime()}`;
 
 		let retval = null;
-		await axios.post('/api/create_attack_record', {date, from, to, title})
+		await axios.post('http://localhost:3010/api/create_attack_record', {date, from, to, title})
 			.then(res => {
 				console.log(res);
 				if (res.status !== 200) {
@@ -75,7 +75,7 @@ export class AttackPage extends Component {
 		let record_id = await this.createAttackRecord();
 		console.log(record_id);
 
-		await axios.post('/api/sendmail', {...this.state, record_id})
+		await axios.post('http://localhost:3010/api/sendmail', {...this.state, record_id})
 			.then(res => {
 				if (res.status !== 200){
 					console.log("error");

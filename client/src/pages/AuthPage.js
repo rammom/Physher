@@ -37,7 +37,7 @@ export class AuthPage extends Component {
 
 	login = (e) => {
 		e.preventDefault();
-		axios.post('/auth/login', this.state.login)
+		axios.post('http://localhost:3010/auth/login', this.state.login)
 			.then(res => {
 				let login = this.state.login;
 				login.error = "";
@@ -56,9 +56,8 @@ export class AuthPage extends Component {
 
 	register = (e) => {
 		e.preventDefault();
-		axios.post('/auth/register', this.state.register)
+		axios.post('http://localhost:3010/auth/register', this.state.register)
 			.then(res => {
-				console.log(res);
 				let register = this.state.register;
 				register.error = "";
 				this.setState({ register });
@@ -66,7 +65,6 @@ export class AuthPage extends Component {
 				this.forceUpdate();
 			})
 			.catch(err => {
-				console.log(err);
 				let register = this.state.register;
 				register.error = "Username taken or passwords don't match";
 				this.setState({ register });
@@ -76,7 +74,7 @@ export class AuthPage extends Component {
 	} 
 
 	logout = (e) => {
-		axios.post('/auth/logout')
+		axios.post('http://localhost:3010/auth/logout')
 			.then(res => {
 				sessionStorage.setItem("user", null);
 				this.forceUpdate();
