@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const config = require('../config.json');
-const secret_config = require('../config.secret.json');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('../models/User');
