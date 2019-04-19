@@ -10,7 +10,6 @@ We will cover some of the phishing techniques we've pursued in the following doc
 
 ## Contents
 
-  - [Demo](http://www.mrammo.ca)
   - [Dependencies](##Dependencies)
   - [Project Setup](##Setup)
   - [Project Results](##Results)
