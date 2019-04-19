@@ -10,9 +10,9 @@ We will cover some of the phishing techniques we've pursued in the following doc
 
 ## Contents
 
-  - [Dependencies](##Dependencies)
-  - [Project Setup](##Setup)
-  - [Project Results](##Results)
+  - [Dependencies](#Dependencies)
+  - [Project Setup](#Setup)
+  - [Project Results](#Results)
 
 ## Dependencies
 
