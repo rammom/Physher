@@ -7,10 +7,12 @@ const User = require('../models/User');
 
 
 passport.serializeUser(function (user, done) {
+	console.log(`user: ${user}`);
 	done(null, user.id);
 });
 
 passport.deserializeUser(function (id, done) {
+	console.log(`ID: ${id}`);
 	User.findById(id, function (err, user) {
 		done(err, user);
 	});
@@ -66,6 +68,8 @@ router.post('/register', async (req, res, next) => {
 
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
 	let user = req.user;
+	console.log("user:");
+	console.log(req.user);
 	user.password = null;
 	return res.json({ user });
 });

@@ -30,8 +30,6 @@ router.get('/clicked', async (req, res, next) => {
 });
 
 router.post('/create_attack_record', async (req, res, next) => {
-	if (!req.user) return res.json(400).send('error');
-
 	let date = req.body.date;
 	let to = req.body.to;
 	let from = req.body.from;
@@ -46,21 +44,24 @@ router.post('/create_attack_record', async (req, res, next) => {
 
 	await attack.save();
 
-	let user = null;
-	let error = null;
-	await User.findById(req.user._id)
-		.then(usr => user = usr)
-		.catch(err => error = err);
+	if (req.user) {
+		let user = null;
+		let error = null;
+		await User.findById(req.user._id)
+			.then(usr => user = usr)
+			.catch(err => error = err);
+	
+		console.log(user);
+	
+		if (error) return res.json(500).send('error');
+		if (!user) return res.json(400).send('error');
+		
+		if (!user.attacks) user.attacks = [];
+		user.attacks.push(attack._id);
+	
+		await user.save();
+	}
 
-	console.log(user);
-
-	if (error) return res.json(500).send('error');
-	if (!user) return res.json(400).send('error');
-
-	if (!user.attacks) user.attacks = [];
-	user.attacks.push(attack._id);
-
-	await user.save();
 
 	return res.status(200).json({
 		record_id: attack._id,
